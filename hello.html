@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1> Hello, Domestika </h1>
+	<canvas width="600" height="600" ></canvas>
+	<script type="text/javascript">
+
+		let canvas = document.querySelector('canvas');
+		let context = canvas.getContext('2d');
+
+		context.fillStyle = 'green';
+		//context.fillRect(100,100,400,400);
+
+		context.lineWidth = 4;
+		context.beginPath();
+		context.rect(100,100,400,400);
+		context.strokeStyle = 'black';
+		context.stroke();
+
+		context.beginPath();
+		context.arc(300,300,100, 0 , Math.PI * 2);
+		context.stroke();
+
+
+		for (var i = 0; i < 5; i++) {
+			context.beginPath();
+			context.rect(100 + 80 * i, 100, 60, 60);
+			context.stroke();
+		}
+
+
+		let sentence = 'Tonigh the concert will start';
+
+		function saySomething(param) {
+			// body...
+			console.log(param);
+		}
+
+		saySomething(sentence)
+
+
+		function add(a,b){
+			return a+b;
+
+		}
+
+		let result = add(5,7);
+		console.log(result)
+
+		let multiply = (a,b) => {
+			return a*b;
+		}
+
+		console.log(multiply(5,7));
+
+		let years = [];
+		let menu = ['one','two','three', 'four'];
+
+		for (var i = 0; i < 4; i++) {
+			console.log(menu[i]);
+		}
+
+		for (var i = 0; i < 10; i++) {
+			years.push(2040+i);
+		}
+
+		console.log(years);
+
+		;
+
+		const w = 60;
+	    const h = 60;
+	    const gap = 20;
+
+	    let x,y;
+	    let r;
+
+	    for (var i = 0; i < 5; i++) {
+	      for (var j = 0; j < 5; j++) {
+	        x = 100 + (w + gap) * i;
+	        y = 100 + (h + gap) * j;
+
+	        context.beginPath();
+	        context.rect(x,y,w,h);
+	        context.stroke();
+
+	        r = Math.random();
+
+	        console.log("RANDOM");
+			console.log(r)
+
+	        if (r >= 0.5) {
+	        	console.log("Entre");
+	          	context.beginPath();
+	          	context.rect(x + 8, y + 8, w-16, h - 16);
+	          	context.stroke();
+	        }
+	      }  
+	    }
+
+
+	</script>
+</body>
+</html>
